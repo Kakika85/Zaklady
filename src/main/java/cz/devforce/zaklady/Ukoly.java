@@ -2,6 +2,7 @@ package cz.devforce.zaklady;
 
 import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 public class Ukoly {
@@ -16,6 +17,9 @@ public class Ukoly {
         vypisFloru3();
         vypisFloru3_1();
         vypisFloru5();
+        vareni();
+        numero();
+        spojení();
 
     }
 
@@ -30,6 +34,9 @@ public class Ukoly {
         for (int i = pocatecniHodnota; i <= pocatecniHodnota + pocetOpakovani; i++) {
             System.out.println(i);
         }
+
+        System.out.println(",,,,,,,");
+
     }
 
 
@@ -43,15 +50,22 @@ public class Ukoly {
             System.out.println(rodina[i]);
         }
 
+        System.out.println(",,,,,,,");
+
         for (String clen : rodina) {
             System.out.printf(clen + ", ");
         }
-
         System.out.println("");
+
+
+        System.out.println(",,,,,,,");
 
         for (String clen : rodina) {
             System.out.println(clen);
         }
+
+        System.out.println(",,,,,,,");
+
     }
 
 
@@ -69,9 +83,15 @@ public class Ukoly {
         for (String clen : clenove) {
             System.out.println(clen);
         }
+
+        System.out.println(",,,,,,,");
+
         for (int i = 0; i < clenove.size(); i++) {
             System.out.println(clenove.get(i));
         }
+
+        System.out.println(",,,,,,,");
+
     }
 
 
@@ -93,6 +113,9 @@ public class Ukoly {
         for (int i = 0; i < jmenaPejsku.size(); i++) {
             System.out.println(jmenaPejsku.get(i));
         }
+
+        System.out.println(",,,,,,,");
+
     }
 
     /**
@@ -108,6 +131,9 @@ public class Ukoly {
     public static void vypisVetu2() {
         System.out.printf("je ");
         vypisVetu3();
+
+    System.out.println(",,,,,,,");
+
     }
 
     public static void vypisVetu3() {
@@ -124,7 +150,9 @@ public class Ukoly {
      * 5. vyber si vhodny cyklus, ktery jsi pouzila v predchozich bodech a ukonci ho po vypsani 5ti polozek
      */
 
-    // 1. úkol - cyklem projdi pole a vypis pod sebe poradi a jmeno, napr "3. Buk"
+    /**
+     * 1. úkol - cyklem projdi pole a vypis pod sebe poradi a jmeno, napr "3. Buk"
+     */
     private static final String[] rostlinyAStromy = new String[]{"Orchidej", "Lilie", "Růže", "Pampeliška", "Podběl", "Sedmikráska", "Jabloň", "Slivoň", "Hrušeň", "Meruňka", "Ořech"};
 
     public static void vypisFloru() {
@@ -132,9 +160,13 @@ public class Ukoly {
             System.out.println(i + 1 + ". " + rostlinyAStromy[i]);
         }
 
+        System.out.println(",,,,,,,");
+
     }
 
-    // 2. úkol - najdi nejjednodussi zpusob jak seradit pole podle abecedy a vypis "3. strom z 10ti je Buk" (cislo 10 musi odpovidat poctu prvku v poli a nesmi byt napsane natvrdo)
+    /**
+     * 2. úkol - najdi nejjednodussi zpusob jak seradit pole podle abecedy a vypis "3. strom z 10ti je Buk" (cislo 10 musi odpovidat poctu prvku v poli a nesmi byt napsane natvrdo)
+     */
     public static void vypisFloru2() {
         var rostlinyAStromy2 = new ArrayList<String>();
 
@@ -155,9 +187,14 @@ public class Ukoly {
         for (int i = 0; i < rostlinyAStromy2.size(); i++) {
             System.out.println(i + ". strom z " + rostlinyAStromy2.size() + " " + rostlinyAStromy2.get(i));
         }
+
+        System.out.println(",,,,,,,");
+
     }
 
-    // 3. úkol - najdi zpusob jak seradit pole pozpatku a znovu vypis, tentokrat jen nazev "Buk" a nic vic
+    /**
+     * 3. úkol - najdi zpusob jak seradit pole pozpatku a znovu vypis, tentokrat jen nazev "Buk" a nic vic
+     */
     public static void vypisFloru3() {
         var rostlinyAStromy3 = new ArrayList<String>();
 
@@ -178,9 +215,14 @@ public class Ukoly {
         for (int i = 0; i < rostlinyAStromy3.size(); i++) {
             System.out.println(rostlinyAStromy3.get(i));
         }
+
+        System.out.println(",,,,,,,");
+
     }
 
-    // 3.1 úkol - uprav za pomoci googlu vypsani na "Počet znaků ve slově 'Ořech': '5' "
+    /**
+     * 3.1 úkol - uprav za pomoci googlu vypsani na "Počet znaků ve slově 'Ořech': '5' "
+     */
     public static void vypisFloru3_1() {
         var rostlinyAStromy3_1 = new ArrayList<String>();
 
@@ -203,6 +245,8 @@ public class Ukoly {
             System.out.println("Počet znaků ve slově " + (rostlinyAStromy3_1.get(i)) + " : " + rostlinyAStromy3_1.get(i).length());
         }
 
+        System.out.println(",,,,,,,");
+
         /* DRUHÁ A LEPŠÍ VARIANTA
 
         for (String clen : rostlinyAStromy3_1) {
@@ -212,12 +256,15 @@ public class Ukoly {
         */
 
     }
-    // 4. úkol - zkus vygooglit jake existuji vsechny standardne pouzivane formy cyklu, zajimaji me pouze klicova slova kterymi se vytvari (tzn bez implementace)
-    //         - for , while , do-while
+    /**
+     * 4. úkol - zkus vygooglit jake existuji vsechny standardne pouzivane formy cyklu, zajimaji me pouze klicova slova kterymi se vytvari (tzn bez implementace)
+     */
+     //   for , while , do-while
 
 
-    // 5. úkol - vyber si vhodny cyklus, ktery jsi pouzila v predchozich bodech a ukonci ho po vypsani 5ti polozek
-
+    /**
+     * 5. úkol - vyber si vhodny cyklus, ktery jsi pouzila v predchozich bodech a ukonci ho po vypsani 5ti polozek
+     */
     public static void vypisFloru5() {
         var rostlinyAStromy5 = new ArrayList<String>();
 
@@ -233,11 +280,195 @@ public class Ukoly {
         rostlinyAStromy5.add("Meruňka");
         rostlinyAStromy5.add("Ořech");
 
-        Collections.reverse(rostlinyAStromy5);
+        // Collections.reverse(rostlinyAStromy5);
 
 
         for (int i = 0; i < 5; i++) {
             System.out.println(rostlinyAStromy5.get(i));
+        }
+
+        System.out.println(",,,,,,,");
+
+        for (int i = 0; i < rostlinyAStromy5.size(); i++) {
+            if (i > 4) {
+                break;
+            }
+            System.out.println(rostlinyAStromy5.get(i));
+        }
+
+        System.out.println(",,,,,,,");
+
+        int pocitadlo = 0;
+        for (String clen : rostlinyAStromy5) {
+            pocitadlo++;
+            if (pocitadlo > 5) {
+                break;
+            }
+            System.out.println(clen);
+        }
+        System.out.println(",,,,,,,");
+    }
+
+    /**
+     * vytvoř si pole z následujících: ingredience = vajíčka, vepřové, knedlíky, brambory, kuřecí, hranolky, špenát, zelí, cibule, omáčka, vývar
+     * <p>
+     * 1. řazení a obracení pole metodami je pro trubky, cyklem projdi pole POZPÁTKU a vypiš polozky z "ingredience" pod sebe... (vedle i++ existuje i i--)
+     * 2. oprav chybu/chyby
+     * for(boolean i = 0; i < ingredience.length(); i + 1) {
+     * System.out.println(ingredience.set(j));
+     * }
+     * 3. určitě máš ráda jídla, jako já, BEZ cyklu vypiš alespoň 3 jídla z "ingrediencí" pod sebe, příklad: "kuřecí vývar"
+     * <p>
+     * vytvoř druhé pole: cisla = 2, 3, 1, 6, 4, 5, 8, 7, 9, 11, 10
+     * 4. cyklem vypiš pole "cisla" ZA sebou. Vypiš ale jen za podmínky, že současné číslo je větší, než předchozí
+     * 5. jednim cyklem projdi obě pole najednou a vypisuj najednou na radek "polozka z cisla" a "polozka z ingredience"
+     **/
+
+    /**
+     * 1. řazení a obracení pole metodami je pro trubky, cyklem projdi pole POZPÁTKU a vypiš polozky z "ingredience" pod sebe... (vedle i++ existuje i i--)
+     */
+    public static void vareni() {
+        var ingredience = new ArrayList<String>();
+        ingredience.add("vajíčka");
+        ingredience.add("vepřové");
+        ingredience.add("knedlíky");
+        ingredience.add("brambory");
+        ingredience.add("kuřecí");
+        ingredience.add("hranolky");
+        ingredience.add("špenát");
+        ingredience.add("zelí");
+        ingredience.add("cibule");
+        ingredience.add("omáčka");
+        ingredience.add("vývar");
+
+        for (int j = ingredience.size() - 1; j >= 0; j--) {
+            System.out.println(ingredience.get(j));
+        }
+
+        System.out.println(",,,,,,,");
+
+    /**
+     * 2. oprav chybu/chyby
+     * for(boolean i = 0; i < ingredience.length(); i + 1) {
+     * System.out.println(ingredience.set(j));
+     * }
+     */
+        for (int i = 0; i < ingredience.size(); i++) {
+            System.out.println(ingredience.get(i));
+        }
+        System.out.println(",,,,,,,");
+
+     /**
+      * 3. určitě máš ráda jídla, jako já, BEZ cyklu vypiš alespoň 3 jídla z "ingrediencí" pod sebe, příklad: "kuřecí vývar"
+      */
+        System.out.println(ingredience.get(1) + ", " + ingredience.get(2) + " a " + ingredience.get(6));
+        System.out.println(ingredience.get(2) + " a " + ingredience.get(9));
+        System.out.println(ingredience.get(4) + " a " + ingredience.get(5));
+
+        System.out.println(",,,,,,,");
+    }
+
+     /**
+      * vytvoř druhé pole: cisla = 2, 3, 1, 6, 4, 5, 8, 7, 9, 11, 10
+      * 4. cyklem vypiš pole "cisla" ZA sebou. Vypiš ale jen za podmínky, že současné číslo je větší, než předchozí
+      */
+      public static void numero() {
+        var cisla = new ArrayList<Integer>();
+        cisla.add(2);
+        cisla.add(3);
+        cisla.add(1);
+        cisla.add(6);
+        cisla.add(4);
+        cisla.add(5);
+        cisla.add(8);
+        cisla.add(7);
+        cisla.add(9);
+        cisla.add(11);
+        cisla.add(10);
+
+        /*
+        for (int i = 0; i < cisla.size(); i++){
+
+            if (i == 0) {
+                System.out.println(cisla.get(i));
+            }
+
+            if (i > 0 && cisla.get(i) > cisla.get(i-1)) {
+                System.out.println(cisla.get(i));
+            }
+        }
+        */
+
+        /*
+        for (int i = 0; i < cisla.size(); i++){
+
+            if (i == 0) {
+                System.out.println(cisla.get(i));
+            } else if (cisla.get(i) > cisla.get(i-1)) {
+                System.out.println(cisla.get(i));
+            }
+        }
+        */
+
+
+        /*
+        for (int i = 0; i < cisla.size(); i++){
+
+            if ((i == 0) || (i > 0 && cisla.get(i) > cisla.get(i-1))) {
+                System.out.println(cisla.get(i));
+            }
+        }
+        */
+
+        for (int i = 0; i < cisla.size(); i++){
+
+            if (i == 0 || cisla.get(i) > cisla.get(i-1)) {
+                System.out.println(cisla.get(i));
+            }
+        }
+
+        System.out.println(",,,,,,,");
+
+    }
+
+    /**
+     * 5. jednim cyklem projdi obě pole najednou a vypisuj najednou na radek "polozka z cisla" a "polozka z ingredience"
+     **/
+    public static void spojení(){
+        var ingredience1 = new ArrayList<String>();
+        ingredience1.add("vajíčka");
+        ingredience1.add("vepřové");
+        ingredience1.add("knedlíky");
+        ingredience1.add("brambory");
+        ingredience1.add("kuřecí");
+        ingredience1.add("hranolky");
+        ingredience1.add("špenát");
+        ingredience1.add("zelí");
+        ingredience1.add("cibule");
+        ingredience1.add("omáčka");
+        ingredience1.add("vývar");
+
+        var cisla1 = new ArrayList<Integer>();
+        cisla1.add(2);
+        cisla1.add(3);
+        cisla1.add(1);
+        cisla1.add(6);
+        cisla1.add(4);
+        cisla1.add(5);
+        cisla1.add(8);
+        cisla1.add(7);
+        cisla1.add(9);
+        cisla1.add(11);
+        cisla1.add(10);
+
+        /*
+        for (int i = 0; i < ingredience1.size(); i++) {
+            System.out.println(cisla1.get(i) + " " + ingredience1.get(i));
+        }
+        */
+
+        for (int i = 0; i < cisla1.size(); i++) {
+            System.out.println(cisla1.get(i) + " " + ingredience1.get(i));
         }
     }
 }
