@@ -1,8 +1,9 @@
 package cz.devforce.zaklady;
 
-import java.sql.SQLOutput;
+import cz.devforce.zaklady.tridy.Nemovitost;
+import cz.devforce.zaklady.tridy.Osoba;
+
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 
 public class Ukoly {
@@ -20,7 +21,8 @@ public class Ukoly {
         vareni();
         numero();
         spojení();
-
+        instanceNemovitosti();
+        instanceOsoby();
     }
 
     /**
@@ -470,5 +472,63 @@ public class Ukoly {
         for (int i = 0; i < cisla1.size(); i++) {
             System.out.println(cisla1.get(i) + " " + ingredience1.get(i));
         }
+
+        System.out.println(",,,,,,,,");
+
+        /**
+         * 5.1 serazeni ingredienci dle pole cisel, tak aby byla cisla serazena vzestupne
+         **/
+
+        Collections.sort(cisla1);
+
+        for (int i = 0; i < cisla1.size(); i++) {
+            System.out.println(cisla1.get(i) + ". " + ingredience1.get(cisla1.get(i)-1));
+        }
     }
+
+    /**
+     * Tak, je na čase zabruslit do tajů tříd. Je potřeba si uvědomit, že třída je skoro to samé, jako Integer, nebo String...
+     * Ve spoustě případů se s třídou zachází úplně stejně. Můžeš jí předávat v argumentu metody, returnovat, stejně jako číslo...
+     * Jediný rozdíl je v tom, že číslo je prostě primitivní číslo, a třída je neprimitivní krabička ve které je více primitivních čísel a stringů...
+     *
+     * číslo vytvořís takto:
+     * int cislo = 0;
+     * třídu takto:
+     * Trida trida = new Trida();
+     *
+     * Všimni si že třída má klíčové slovíčko new (to aby to ta java poznala), a na konci má závorky "()", to abys mohla třídu vytvořit už rovnou s nějakými hodnotami,
+     * pokud chceš. Pokud nechceš, je potřeba tak jako tak dát nakonec "()" a tvůj oblíbený ";" :)
+     *
+     *   1. Vytvoř úplně prázdnou třídu bez čehokoliv, dej jí do package "tridy" (tzn. cz.devforce.zaklady.tridy)
+     *   2. Vytvoř instanci třídy pomocí klíčového slova new... udělej podmínku, že pokud třída není null, vypiš "třída založena"
+     *   3. Vytvoř třídu Osoba, která bude obsahovat property - stringy jmeno a prijmeni, vytvor konstruktor kery tyto stringy vyplni
+     **/
+
+    public static void instanceNemovitosti() {
+
+        Nemovitost dum = new Nemovitost();
+
+        if (dum != null) {
+            System.out.println("třida založena");
+        }
+    }
+
+    public static void instanceOsoby(){
+        Osoba js = new Osoba("Jaroslav", "Svoboda");
+        Osoba kf = new Osoba("Karolina", "Frolíková");
+        Osoba ds = new Osoba("Daniel", "Svoboda");
+        Osoba as = new Osoba("Anežka", "Svobodová");
+    }
+
+
+
+       /*
+        Nemovitost dum = new Nemovitost();
+        dum.dispozice = "3+kk";
+        dum.barva = "bílá";
+        dum.topeni = "elektrické-podlahové";
+        dum.cena = "1.490.000 Kč";
+        */
+
 }
+
