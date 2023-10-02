@@ -1,7 +1,10 @@
 package cz.devforce.zaklady;
 
+import cz.devforce.zaklady.tridy.Dispozice;
+import cz.devforce.zaklady.tridy.Druh;
 import cz.devforce.zaklady.tridy.Nemovitost;
 import cz.devforce.zaklady.tridy.Osoba;
+import cz.devforce.zaklady.tridy.Trida;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -23,6 +26,7 @@ public class Ukoly {
         spojení();
         instanceNemovitosti();
         instanceOsoby();
+        instanceTrida();
     }
 
     /**
@@ -484,6 +488,8 @@ public class Ukoly {
         for (int i = 0; i < cisla1.size(); i++) {
             System.out.println(cisla1.get(i) + ". " + ingredience1.get(cisla1.get(i)-1));
         }
+
+        System.out.println(",,,,,,,,");
     }
 
     /**
@@ -504,15 +510,13 @@ public class Ukoly {
      *   3. Vytvoř třídu Osoba, která bude obsahovat property - stringy jmeno a prijmeni, vytvor konstruktor kery tyto stringy vyplni
      **/
 
-    public static void instanceNemovitosti() {
+    public static void instanceTrida() {
+        Trida trida = new Trida();
 
-        Nemovitost dum = new Nemovitost();
-
-        if (dum != null) {
+        if (trida!= null) {
             System.out.println("třida založena");
         }
     }
-
     public static void instanceOsoby(){
         Osoba js = new Osoba("Jaroslav", "Svoboda");
         Osoba kf = new Osoba("Karolina", "Frolíková");
@@ -521,14 +525,40 @@ public class Ukoly {
     }
 
 
+    /**
+     * Vsimnul jsem si ze posledni dobou mas rada sestavovani nemovitosti. Mrkneme se tedy spolu na to, co bychom mohli považovat
+     * za třídu Nemovitost. K obvyklým "String", "int" a "boolean" přibude specialitka - výčtový typ "enum", bude se ti hodit ;)
+     *
+     * Následující úkoly nedělej samostatně. Je to postup, jak iterativně obohacovat jednu věc. Hodně můžeš okoukat od třídy Osoba.
+     *
+     * 1. Vytvoř si prázdnou třídu Nemovitost
+     * 2. Přidej tyto property (atributy, fieldy, parametry, vlastnosti, atd.. jak tomu kdo říká) do třídy Nemovitost:
+     * - private Druh (enum) druh
+     * - private Dispozice (enum) dispozice
+     * - private String barva
+     * - private String topeni
+     * - public int cena (Všimni si, že cena je int a ne String a je public protože se v čase může měnit. Interně uložíme cenu jako
+     * číslo a při vypisování ji můžeme libovolně formátovat)
+     *
+     * 3. Přidej konstruktor, který přijme všechny property a nasetuje je
+     * 4. Přidej druhý konstruktor, který vynechá cenu
+     * 5. Vytvoř první instanci Nemovitosti se všemi parametry
+     * 6. Vytvoř druhou instanci Nemovitosti, tentokrát při vytváření instance vynechej cenu
+     * Hotovo
+     *
+     *
+     * Nemovitost bude mít nějaké základní property
+     */
 
-       /*
-        Nemovitost dum = new Nemovitost();
-        dum.dispozice = "3+kk";
-        dum.barva = "bílá";
-        dum.topeni = "elektrické-podlahové";
-        dum.cena = "1.490.000 Kč";
-        */
+    public static void instanceNemovitosti() {
+        // vytvoření instace první nemovitosti
+        Nemovitost dumVPredbojiKdeBydlime = new Nemovitost(Druh.Dum, Dispozice.D4_kk, "bílá", "elektrické, podlahové", 27500);
 
+        // vytvoření instace druhé nemovitosti
+        Nemovitost bytVCakovicichKdeJsmeBydleli = new Nemovitost(Druh.Byt, Dispozice.D1_kk, "tuhá paliva, celoobjektové", 7000);
+
+        // vytvoření instace třetí nemovitosti a nasetování ceny do instance
+        Nemovitost zahradaCoJsmeChviliVlastnili = new Nemovitost(Druh.Zahrada);
+        zahradaCoJsmeChviliVlastnili.cena = 0;
+    }
 }
-
