@@ -1,10 +1,15 @@
 package cz.devforce.zaklady;
 
+import cz.devforce.zaklady.tridy.AutoTyp;
+import cz.devforce.zaklady.tridy.Automobil;
 import cz.devforce.zaklady.tridy.Dispozice;
 import cz.devforce.zaklady.tridy.Druh;
+import cz.devforce.zaklady.tridy.Jmena;
 import cz.devforce.zaklady.tridy.Nemovitost;
 import cz.devforce.zaklady.tridy.Osoba;
 import cz.devforce.zaklady.tridy.Trida;
+import cz.devforce.zaklady.tridy.Urceni;
+import cz.devforce.zaklady.tridy.Zvire;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -27,6 +32,8 @@ public class Ukoly {
         instanceNemovitosti();
         instanceOsoby();
         instanceTrida();
+        instanceAutomobil();
+        instanceZvire();
     }
 
     /**
@@ -561,4 +568,33 @@ public class Ukoly {
         Nemovitost zahradaCoJsmeChviliVlastnili = new Nemovitost(Druh.Zahrada);
         zahradaCoJsmeChviliVlastnili.cena = 0;
     }
+    /**
+     * 1. Vymysli si JEDNU třídu, která bude hezky popisovat nějaký objekt z reality (Osobu a Nemovitost už máš,
+       takze např letadlo, auto, lod)
+     * 2. Do tridy pridej PRESNE 4 property, jeden string, jeden int, jeden enum a jeden boolean
+     * 3. Udelej minimalne 1 konstruktor kde se nasetuje vše
+     * 4. Vytvoř instance této třídy v různých variantách
+     * 5. dle uvazeni pridej relevantni konstruktory pro ruzne varianty
+     */
+
+    public static void instanceAutomobil(){
+        Automobil iontik = new Automobil("Hyundai", AutoTyp.Osobni, 2, true);
+        Automobil stehovak = new Automobil("Ford", AutoTyp.Dodavka, 2, false);
+        Automobil zasobovac = new Automobil("Scania", AutoTyp.Nakladni, 4, true);
+    }
+    /**
+     * 1. Vytvoř podobnou třídu jako v úkolech #5, pocet propert je na tobe, povinny je alespon jeden enum
+     * 2. v konstruktoru vynechej jednu property podobne jako v ukolech #4
+     * 3. vytvor druhou tridu, kompletne prazdnou bez niceho
+     * 4. v první třídě přidej propertu, která bude mít datový typ dle nazvu druhe tridy a zahrn do konstruktoru/ů
+     * 5. vytvor instanci. kdyz bude na rade setovani druhe classy do konstruktoru prvni classy, pouzij "new"
+     */
+
+    public static void instanceZvire(){
+        Zvire pes = new Zvire("pes", 4, Urceni.Domaci);
+        Zvire koza = new Zvire("koza", Urceni.Chovne);
+        Zvire papousek = new Zvire("papoušek", 2, Urceni.Domaci, new Jmena("Adam"));
+        Zvire lvice = new Zvire("lvice", 4, Urceni.Divoke, new Jmena("Eva"));
+    }
+
 }
