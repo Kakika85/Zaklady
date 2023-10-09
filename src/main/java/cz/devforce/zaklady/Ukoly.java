@@ -5,6 +5,7 @@ import cz.devforce.zaklady.tridy.Automobil;
 import cz.devforce.zaklady.tridy.Dispozice;
 import cz.devforce.zaklady.tridy.Druh;
 import cz.devforce.zaklady.tridy.Jmena;
+import cz.devforce.zaklady.tridy.Letadlo;
 import cz.devforce.zaklady.tridy.Nemovitost;
 import cz.devforce.zaklady.tridy.Osoba;
 import cz.devforce.zaklady.tridy.Trida;
@@ -34,6 +35,7 @@ public class Ukoly {
         instanceTrida();
         instanceAutomobil();
         instanceZvire();
+        instanceLetadlo();
     }
 
     /**
@@ -597,4 +599,28 @@ public class Ukoly {
         Zvire lvice = new Zvire("lvice", 4, Urceni.Divoke, new Jmena("Eva"));
     }
 
+
+    /**
+     * 1. Vytvoř třídu, pocet propert je na tobe, povinná je alespoň jedna jiná classa v konstruktoru
+     * 2. Vytvoř instanci třídy tak jak jsi zvyklá
+     * 3. vytvoř instanci, ale nejdřív si udělej všechny potřebné parametry jako lokální proměnné a ty tam pak nasetuj
+     * 4. udělej getter a setter na jeden vybraný parametr, napoví ti google a napoví ti i idea při zadávání
+     * 5. pod vytvořením instance použij setter, nasetuj třeba string
+     * 6. vypis do konzole za pouziti getteru
+     */
+
+    public static void instanceLetadlo(){
+        // zde si to setuji napřímo
+        Letadlo boeing = new Letadlo("Dopravní", 250, 240);
+        //3. zadání zde si to setuji zvlášť (lokální promněné) a pak to použiji při vytváření instance
+        String druh = "osobak";
+        Integer pocetMist = 270;
+        Integer prodanaMista = 200;
+        Letadlo airbus = new Letadlo(druh, pocetMist, prodanaMista);
+        //6. zadání
+        boolean naplnenoTemer = boeing.getNaplnenoTemer();
+        System.out.println("je naplněno k odletu ? " + boeing.getNaplnenoTemer());
+        System.out.println("je naplněno k odletu ? " + naplnenoTemer);
+
+    }
 }
