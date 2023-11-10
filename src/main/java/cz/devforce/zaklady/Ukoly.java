@@ -36,6 +36,7 @@ public class Ukoly {
         instanceAutomobil();
         instanceZvire();
         instanceLetadlo();
+
     }
 
     /**
@@ -623,4 +624,41 @@ public class Ukoly {
         System.out.println("je naplněno k odletu ? " + naplnenoTemer);
 
     }
+    /**
+     * Občas se hodí, že je kód společný pro více částí aplikace. Předcházení duplikaci kódu je velmi hodnotné.
+     * Podívej se na příklad a zkus ho upravit tak, aby nebyl duplicitní:
+     *
+     * public class Hra {
+     *
+     * 	private ArrayList<Object> objekty = new ArrayList<Object>();
+     *
+     * 	public void StartHry() {
+     * 		// Vyprázdníme pole, aby byla jistota, že po předchozí hře nezbyl žádný "bordel" :)
+     * 		if(!objekty.isEmpty()) {
+     * 			objekty.Clear();
+     *                }
+     * 		// další startovací kód
+     * 		// bla
+     * 		// bla
+     * 		// bla* 	}
+     *
+     * 	public void KonecHry() {
+     * 		// Na konci hry vyprázdníme objekty (když hra spadne, nemusí dojít k vyprázdnění)
+     * 		if(!objekty.isEmpty()) {
+     * 			objekty.Clear();
+     * 		}
+     * 		// Další ukončovací kód
+     * 		// bla
+     * 		// bla
+     * 		// bla
+     * 	}
+     * }
+     *
+     * 1. Vytvoř instanci třídy Hra, žádné vstupní parametry nejsou, takže nemusíš řešit konstruktor
+     * 2. Identifikuj, kde v kódu hry dochází k duplicitnímu kódu
+     * 3. Zkus sama vymyslet řešení, které eliminuje duplicity. Použij google, představivost, cokoli...
+     */
+
+    // Provedeno v třidě "Hra"
+
 }
